@@ -1,5 +1,7 @@
 from pyinfra import local
 
+SUDO = True
+
 local.include("tasks/dns.py")
 local.include("tasks/environment.py")
 local.include("tasks/firewall.py")
