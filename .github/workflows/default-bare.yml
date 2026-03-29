@@ -77,12 +77,12 @@ jobs:
           find . -ls
       - name: Run test
         run: |
-          cd $GITHUB_WORKSPACE/$PYINFRA_DIR && pyinfra @local nanokvm_deploy.py -y _sudo=true
+          cd $GITHUB_WORKSPACE/$PYINFRA_DIR && pyinfra @local nanokvm_deploy.py -y
         env:
           PY_COLORS: '1'
       - name: Idempotency run
         run: |
-          cd $GITHUB_WORKSPACE/$PYINFRA_DIR && pyinfra @local nanokvm_deploy.py -y _sudo=true
+          cd $GITHUB_WORKSPACE/$PYINFRA_DIR && pyinfra @local nanokvm_deploy.py -y
         env:
           PY_COLORS: '1'
       - name: Verify
