@@ -120,3 +120,8 @@ jobs:
           sudo tail -n500 /var/log/messages
         if: ${{ always() }}
         continue-on-error: true
+      - name: After script - pyinfra-debug.log
+        run: |
+          tail -n500 pyinfra-debug.log
+        if: ${{ always() }}
+        continue-on-error: true
