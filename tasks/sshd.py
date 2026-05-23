@@ -1,6 +1,5 @@
 from pyinfra.operations import files
 from pyinfra import host
-from pyinfra.facts.files import File
 from pyinfra.operations import sysvinit
 from pyinfra.facts.server import LinuxDistribution
 
