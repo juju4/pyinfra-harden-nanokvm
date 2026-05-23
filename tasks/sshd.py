@@ -17,7 +17,7 @@ sshd_config = files.template(
     harden_sshd_listen=harden_sshd_listen,
 )
 
-if sshd_config.changed:
+if sshd_config.changed and host.get_fact(LinuxDistribution)["name"] == "Buildroot":
     sysvinit.service(
         name="Restart sshd",
         service="S50sshd",
