@@ -79,6 +79,7 @@ jobs:
       - name: Set testing conditions
         run: |
           sudo touch /boot/resolv.conf
+          ls -lA /boot
       - name: Run test
         run: |
           cd $GITHUB_WORKSPACE/$PYINFRA_DIR && pyinfra @local nanokvm_deploy.py -y
