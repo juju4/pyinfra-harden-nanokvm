@@ -1,4 +1,4 @@
-from pyinfra import local
+from pyinfra import local, config
 
 config.SUDO = True
 
