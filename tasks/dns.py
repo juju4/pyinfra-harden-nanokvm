@@ -33,7 +33,6 @@ if resolv_status:
             name="Mirror /boot/resolv.conf to /etc/resolv.conf",
             src="/boot/resolv.conf",
             dest="/boot/resolv.conf",
-            overwrite=True,
             # TypeError: got an unexpected keyword argument 'mode'
             # mode="0644",
             # TypeError: got an unexpected keyword argument 'user'
