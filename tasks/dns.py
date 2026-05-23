@@ -2,6 +2,7 @@ from pyinfra.operations import files
 from pyinfra import host
 from pyinfra.facts.files import File
 from io import StringIO
+from pyinfra.facts.server import LinuxDistribution
 
 hardennanokvm_fw_dnsservers = [
     "1.1.1.1",
@@ -28,7 +29,7 @@ if resolv_status:
         hardennanokvm_fw_dnsservers=hardennanokvm_fw_dnsservers,
     )
 
-    if dns.changed:
+    if dns.changed and host.get_fact(LinuxDistribution)["name"] == "Buildroot":
         files.copy(
             name="Mirror /boot/resolv.conf to /etc/resolv.conf",
             src="/boot/resolv.conf",
