@@ -1,6 +1,6 @@
 from pyinfra import local
 
-SUDO = True
+config.SUDO = True
 
 local.include("tasks/dns.py")
 local.include("tasks/environment.py")
