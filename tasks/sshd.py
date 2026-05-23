@@ -2,6 +2,7 @@ from pyinfra.operations import files
 from pyinfra import host
 from pyinfra.facts.files import File
 from pyinfra.operations import sysvinit
+from pyinfra.facts.server import LinuxDistribution
 
 harden_sshd_port = 22
 harden_sshd_listen = "0.0.0.0"
