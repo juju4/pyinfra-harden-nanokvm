@@ -117,6 +117,8 @@ jobs:
           cat /boot/resolv.conf || true
           cat /etc/resolv.conf || true
           sudo cat /etc/ssh/sshd_config || true
+          grep -qs -- 'OpenBSD: sshd_config,' /etc/ssh/sshd_config || true
+          sudo grep -qs -- 'OpenBSD: sshd_config,' /etc/ssh/sshd_config || true
           cat /etc/iptables.conf || true
           cat /etc/ip6tables.conf || true
           cat /etc/udhcpc/udhcpc.conf || true
