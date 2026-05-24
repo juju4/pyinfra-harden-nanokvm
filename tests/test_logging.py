@@ -1,9 +1,7 @@
-from pyinfra.facts.server import LinuxDistribution
-
-
 def test_syslog_file(host):
     syslog_f = host.file("/etc/default/syslog")
-    if host.get_fact(LinuxDistribution)["name"] == "Buildroot":
+    distro = host.system_info.distribution
+    if distro == "buildroot":
         assert syslog_f.contains("-L -R")
         assert syslog_f.user == "root"
         assert syslog_f.group == "root"
