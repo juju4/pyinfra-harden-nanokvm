@@ -5,4 +5,4 @@ def test_sshdconf_file(host):
         assert sshdconf_f.contains("AllowAgentForwarding no")
         assert sshdconf_f.user == "root"
         assert sshdconf_f.group == "root"
-        assert sshdconf_f.mode == 0o644
+        assert sshdconf_f.mode == 0o600
